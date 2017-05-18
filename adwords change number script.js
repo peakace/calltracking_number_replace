@@ -40,11 +40,15 @@ function replaceTextOnPage( from, to ){
 
 	// This function is called by google and gets a phone number (supplied by google) as argument.
 	function callback( formattedNumber ){
+		// console.log( 'replace( ' + all_to_replace[0] + ' with ' + formattedNumber );
 		for( var i = 0; i < allToReplace.length; i++ ){
           	console.log('replace \"' + allToReplace[i] + '\" by \"' + formattedNumber + '\"');
 			replaceTextOnPage( allToReplace[i], formattedNumber );
 		}
 	};
+	
+	//callback( '[TEST]' );
+	
 	// Call the google function with two arguments.
 	// The first argument is our callback function, which is called by google later and gets the google-phone number as argument.
 	// The second argument is our default phone-number which serves as a fallback in case google can't supply a callback-number.
